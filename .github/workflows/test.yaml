@@ -7,6 +7,9 @@ jobs:
   testjobwork:
     runs-on: ubuntu-latest ## runner
     steps: 
+    - name: USE AN ACTION (CHECKOUT ACTION)
+      uses: actions/checkout@v6
+
     - name: BUILD THE DOCKER IMAGE 
       run: sudo docker build -t testbuild:latest .
 
