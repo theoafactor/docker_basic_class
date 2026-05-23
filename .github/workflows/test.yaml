@@ -13,7 +13,7 @@ jobs:
     - name: BUILD THE DOCKER IMAGE 
       run: sudo docker build -t testbuild:latest .
 
-    - name: LOGIN TO DOCKER HUB
+    - name: LOGIN TO USER'S DOCKER HUB
       run: sudo docker login -u theoafactor -p ${{ secrets.DOCKERHUB_PASSWORD }}
 
     - name: PUSH TO DOCKER HUB
