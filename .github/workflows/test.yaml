@@ -14,7 +14,7 @@ jobs:
       run: sudo docker build -t testbuild:latest .
 
     - name: LOGIN TO DOCKER HUB
-      run: sudo docker login -u theoafactor --password-stdin testpassword
+      run: sudo docker login -u theoafactor -p ${{ secrets.DOCKERHUB_PASSWORD }}
 
     - name: PUSH TO DOCKER HUB
       run: sudo docker push testbuild:latest
