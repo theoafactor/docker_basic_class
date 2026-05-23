@@ -1,0 +1,14 @@
+name: Simple Workflow
+on:
+  push: 
+    branches: 
+      - master
+jobs:
+  testjobwork:
+    runs-on: ubuntu-latest ## runner
+    steps: 
+    - name: BUILD THE DOCKER IMAGE 
+      run: sudo docker build -t testbuild:latest .
+
+    - name: PUSH TO DOCKER HUB
+      run: sudo docker push testbuild:latest

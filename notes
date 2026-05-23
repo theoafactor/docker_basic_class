@@ -1,0 +1,18 @@
+code -> deploy -> computers
+
+
+Code -> Containers
+
+Concept: 
+1. Docker Image
+2. DOcker Container
+3. Dockerfile
+4. DockerHub
+
+code -> docker image -> docker container
+    dockerfile(helps in converting code into docker image)
+
+    docker image -> inactive, transferrable
+    docker container -> active, non-transferrable
+
+Example: simple web app (html)
