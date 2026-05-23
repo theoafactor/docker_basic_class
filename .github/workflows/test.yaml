@@ -14,7 +14,10 @@ jobs:
       run: sudo docker build -t testbuild:latest .
 
     - name: LOGIN TO USER'S DOCKER HUB
-      run: sudo docker login -u theoafactor -p ${{ secrets.DOCKERHUB_PASSWORD }}
+      run: sudo docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_PASSWORD }}
+
+    - name: TAG THE DOCKER IMAGE
+      run: sudo docker tag testbuild:latest ${{ secrets.DOCKERHUB_USERNAME }}/testbuild:latest
 
     - name: PUSH TO DOCKER HUB
-      run: sudo docker push testbuild:latest
+      run: sudo docker push ${{ secrets.DOCKERHUB_USERNAME }}/testbuild:latest
